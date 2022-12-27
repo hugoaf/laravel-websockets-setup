@@ -1,5 +1,7 @@
 <?php
 
+use App\Events\NewMessageEvent;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $message = Request::get('message');
+
+    NewMessageEvent::dispatch($message);
+
+    return view('welcome', ['message' => $message]);
 });
