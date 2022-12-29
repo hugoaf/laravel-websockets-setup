@@ -421,14 +421,6 @@
                 </svg>
             </div>
 
-            <div class="mt-8 p-6 w-full bg-gray-100">
-                <p>
-                    Add an url parameter to test, ´?message=testing´ The message will appear down here. Then open a
-                    second browser with different message.
-                </p>
-                <h2 id="message">{{ $message }}</h2>
-            </div>
-
             <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
                 <div class="grid grid-cols-1 md:grid-cols-2">
                     <div class="p-6">

@@ -1,6 +1,7 @@
 <?php
 
 use App\Events\NewMessageEvent;
+use App\Http\Livewire\Chat;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -16,10 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-
-    $message = Request::get('message');
-
-    NewMessageEvent::dispatch($message);
-
-    return view('welcome', ['message' => $message]);
+    return view('welcome');
 });
+
+Route::get('/chat', Chat::class);
